@@ -1,0 +1,149 @@
+@import './variables.scss';
+
+//Mobile Fonts
+@mixin mobile-h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: $black;
+    font-family: $font-bold1;
+}
+
+@mixin mobile-h2 {
+    font-size: 14px;
+    line-height: 22px;
+    color: $black;
+    font-family: $font-medium1;
+}
+
+@mixin mobile-h4 {
+    font-size: 13px;
+    line-height: 18px;
+    color: $black;
+    font-family: $font-reg1;
+}
+
+@mixin mobile-h5 {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: $silver;
+    font-family: $font-reg1;
+}
+
+//Desktop & Tablet Fonts
+@mixin desktop-tablet-h1-Hero {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    color: $black;
+    font-family: $font-bold1;
+}
+
+@mixin desktop-tablet-h1 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    color: $black;
+    font-family: $font-bold1;
+}
+
+@mixin desktop-tablet-h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: $black;
+    font-family: $font-bold1;
+}
+
+@mixin desktop-tablet-h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: $black;
+    font-family: $font-medium1;
+}
+
+@mixin desktop-tablet-h4 {
+    font-size: 1rem;
+    line-height: 32px;
+    color: $black;
+    font-family: $font-reg1;
+}
+
+@mixin desktop-tablet-h4-listContacts {
+    font-size: 14px;
+    line-height: 2rem;
+    color: $black;
+    font-family: $font-reg1;
+}
+
+@mixin desktop-tablet-h5 {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: $silver;
+    font-family: $font-medium1;
+}
+
+//MediaQueries
+
+@mixin mobile {
+    @media (min-width: 320px) {
+        @content;
+    }
+}
+
+@mixin mobile-tablet {
+    @media (min-width: 321px) and (max-width: 719px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media #{$tablet-width} {
+        @content;
+    }
+}
+
+@mixin tablet-desktop {
+    @media (min-width: 720px) and (max-width: 1079px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media #{$desktop-width} {
+        @content;
+    }
+}
+
+// Miscellaneous
+@mixin side-margin{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @media (min-width:720px){
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+    @media (min-width:1080px){
+        margin-left: 11.5rem;
+        margin-right: 180px;
+    }
+}
+@mixin side-padding{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media (min-width:720px){
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    @media (min-width:1080px){
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+}
+
+@mixin input {
+    height: 3rem;
+    width: 18rem;
+    padding: 0;
+    @include mobile-h2;
+    text-indent: 1rem;
+    border: 1px $textFieldBorder solid;
+    background-color: $textFieldBackground;
+    border-radius: 2px;
+}
