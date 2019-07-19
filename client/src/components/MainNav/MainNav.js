@@ -7,15 +7,13 @@ export default class MainPage extends Component {
     {
         return(
             <div className="navBar">
-                    <div className="navBar__navLogo">
-                        
-                            Forum
-                        
+                    <div className="navBar__navLogo">                        
+                            Forum                        
                     </div>
                     <div className="navBar__navLink">
                         <ul className="navBar__navLink--nav">
                         <NavLink to="/login" className="navBar__navLink--nav-link" activeClassName="navBar__navLink--active"><li>Login</li></NavLink>                            
-                        <NavLink to="/register" className="navBar__navLink--nav-link" activeClassName="navBar__navLink--active"><li>Register</li></NavLink>
+                        <NavLink to="/signUp" className="navBar__navLink--nav-link" activeClassName="navBar__navLink--active"><li>Sign Up</li></NavLink>
                         </ul>
                     </div>
                 </div>

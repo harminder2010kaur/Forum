@@ -2,7 +2,8 @@ import React,{ Component } from 'react';
 import serverUrl from '../../serverUrl/serverUrl';
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
-// import { resolve } from 'url';
+import { NavLink } from 'react-router-dom';
+import './Login.scss';
 
 
 export default class Login extends Component{
@@ -62,20 +63,28 @@ export default class Login extends Component{
         console.log(this.state);
         return(
             <>
-            {this.state.isLoggedIn ? <Redirect to={{pathname: '/home',  state: { id: this.state.email }}}/> : null}
-                <h1>Login</h1>
-                    {isLoginError && <label style={{color: 'red'}}>{errorMessage}</label>}
-                        <form ref={form => (this.loginForm = form)} onSubmit={this.login}>
-                            <div className='form-group'>
-                                Username: <input type='text' name='username' onFocus={this.clearError} autoComplete="off"/>
-                            </div>
-                            <div className='form-group'>
-                                Password: <input type='password' name='password' autoComplete="new-password"/>
-                            </div>
-                            <button className='btn btn-primary'>
-                                Login
-                            </button>
-                        </form>
+                <div className="login_form">
+                    {this.state.isLoggedIn ? <Redirect to={{pathname: '/home',  state: { id: this.state.email }}}/> : null}
+                    <div className="formSection">
+                        <div className="formSection__heading">Login</div>                        
+                            {isLoginError && <label style={{color: 'red'}}>{errorMessage}</label>}
+                            <form className="formSection__form" ref={form => (this.loginForm = form)} onSubmit={this.login}>
+                                <div className="form-components">                                    
+                                        <label htmlFor="username" className="formSection__form--label">User Name</label>    
+                                        <input type='text' name='username' onFocus={this.clearError} autoComplete="off" className="formSection__form--input" required />
+                                                                        
+                                        <label htmlFor="password" className="formSection__form--label">Password</label>    
+                                        <input type='password' name='password' autoComplete="new-password" className="formSection__form--input"/>
+                                    
+                                    <div className="BuyButton">
+                                        <button className="formSection__form--button"><span>Submit</span></button>
+                                    </div>  
+
+                                    <NavLink to="/reset" className="form-components__link">Forget Password</NavLink>                                                                      
+                                </div>
+                            </form>
+                    </div>
+                </div>        
             </>
         )
     }

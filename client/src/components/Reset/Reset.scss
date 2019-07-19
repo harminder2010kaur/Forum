@@ -1,0 +1,187 @@
+$bgcolor1: #323232;
+$bgcolor2: #ffffff;
+$bgcolor3: #fafafa;
+$white: #ffffff;
+$black: #000000;
+$silver: #afafaf;
+$navcolor: #e1e1e1;
+$Alabaster: #fafafa;
+$blue-light: #0095FF;
+$blue: #004892;
+
+.top{
+    height: 40px;    
+}
+
+$font-light: 'Raleway-Light', sans-serif;
+$font-medium: 'Raleway-Medium', sans-serif;
+$font-reg: 'Raleway-Regular', sans-serif;
+
+$font-bold1: 'Nato-Bold', sans-serif;
+$font-light1: 'Nato-Light', sans-serif;
+$font-medium1: 'Nato-Medium', sans-serif;
+$font-reg1: 'Nato-Regular', sans-serif;
+
+@font-face {
+  font-family: 'Raleway-Light';    
+  src: url('../../assets/fonts/Raleway/Raleway-Light.ttf');
+}
+
+@font-face{
+  font-family: 'Raleway-Medium';
+  src: url('../../assets/fonts/Raleway/Raleway-Medium.ttf');
+}
+
+@font-face{
+  font-family: 'Raleway-Regular';
+  src: url('../../assets/fonts/Raleway/Raleway-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Nato-Bold';    
+    src: url('../../assets/fonts/Noto_Sans_HK/NotoSansHK-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Nato-Light';    
+  src: url('../../assets/fonts/Noto_Sans_HK/NotoSansHK-Light.otf');
+}
+
+@font-face{
+  font-family: 'Nato-Medium';
+  src: url('../../assets/fonts/Noto_Sans_HK/NotoSansHK-Medium.otf');
+}
+
+@font-face{
+  font-family: 'Nato-Regular';
+  src: url('../../assets/fonts/Noto_Sans_HK/NotoSansHK-Regular.otf');
+}
+
+.login_form{
+    padding-top: 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.formSection{
+    display: flex;  
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;     
+    width: 280px;
+    color: #000000;    
+    border-bottom: 1px solid $navcolor;  
+    background-color: #ffffff;    
+    box-shadow: 5px 5px 10px #999999;	
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+
+    &__heading{
+        padding-top: 1rem;             
+        font-family: $font-bold1;        
+        font-size: 1.5em;        
+        color: $blue;
+        margin-bottom: 1rem;
+
+        @media (min-width: 720px)
+        {
+            padding-top: 0;
+        }
+    }
+
+    &__form{            
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        width: 100%;   
+        // margin: 0 1rem;     
+        font-family: $font-reg1;  
+        &--label{
+            color: $silver;
+            font-family: $font-reg1;
+            font-size: 1rem;
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;                
+        } 
+        
+        &--input{
+            color: $black;
+            border-radius: 0.2rem;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid $silver;
+            background-color: $Alabaster;
+            width: 240px;
+            height: 30px;
+            font-family: $font-light1;
+            font-size: 1rem;  
+            resize: none;
+        }
+        
+        &--input:active, &--input:focus{                
+            border: 2px solid $blue-light;
+            border-radius: 0.2rem;            
+        }
+
+        &--textarea{
+            color: $black;
+            border-radius: 0.2rem;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid $silver;
+            background-color: $Alabaster;
+            width: 270px;
+            height: 80px;
+            font-family: $font-light1;
+            font-size: 1rem;  
+            resize: none;
+        }
+        
+        &--textarea:active, &--textarea:focus{                
+            border: 2px solid $blue-light;
+            border-radius: 0.2rem;            
+        }
+
+        &--button{
+            background-color: $blue;
+            color: $white;            
+            height: 50px; 
+            width: 150px;                       
+            border-radius: 0.5rem;
+            text-transform: uppercase;
+            font-family: $font-bold1;
+            letter-spacing: 0.1rem;
+            font-size: 1rem;
+            border: 0;
+            margin-bottom: 1rem;
+            box-shadow: 5px 5px 10px #999999;	
+            transition: all 0.5s;
+        }
+
+         &--button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          
+          &--button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -10px;
+            transition: 0.5s;
+          }
+          
+          &--button:hover span {
+            padding-right: 15px;
+          }
+          
+          &--button:hover span:after {
+            opacity: 1;
+            right: 0;
+          }
+    }     
+}

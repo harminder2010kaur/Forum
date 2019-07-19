@@ -90,7 +90,8 @@ const checkEmail = (req, res) => {
         {
             res.json(false);
         }
-        else{
+        else
+        {
             res.json(true);
         }
     })
@@ -102,9 +103,7 @@ const checkEmail = (req, res) => {
 
 const signUp = async (req, res) => {
     const userValue = {};
-
     let hash = bcrypt.hashSync(req.body.password, salt);
-
     userValue.fname = req.body.fname;
     userValue.lname = req.body.lname;
     userValue.email = req.body.email;    
@@ -112,7 +111,11 @@ const signUp = async (req, res) => {
     userValue.user_type = 'u';
     userValue.createdAt = moment().subtract(4, "hours").format();
     const newUser = await User.create(userValue);
-    res.json(newUser);
+    if(newUser)
+    {
+        res.json(true);
+    }
+    // res.json(newUser);
 }
 
 const profile = (req,res) => {
@@ -133,7 +136,7 @@ const updatePassword = (req,res) => {
                                             .catch( error => res.json(error));                                            
 }
 
-router.get('/email', checkEmail);
+router.post('/email', checkEmail);
 router.post('/login', login);
 router.post('/profile', profile);
 router.get('/topic', getAllTopics);

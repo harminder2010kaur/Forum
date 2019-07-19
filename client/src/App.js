@@ -4,8 +4,9 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import MainNav from '../src/components/MainNav/MainNav';
 import MainPage from '../src/components/MainPage/MainPage';
 import Login from '../src/components/Login/Login';
-import Register from '../src/components/Register/Register';
+import SignUp from './components/Register/SignUp';
 import Home from '../src/components/Home/Home';
+import Reset from '../src/components/Reset/Reset';
 // import NavBar from '../src/components/NavBar';
 import Topic from '../src/components/Topic/Topic';
 import Response from '../src/components/Response/Response';
@@ -21,8 +22,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={MainPage} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
+            <Route exact path="/signUp" component={SignUp} />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/reset" component={Reset} />
             <Route exact path="/topic" component={Topic} />
             <Route exact path="/response/:id" component={Response} />
             <Route exact path="/logout" component={LogOut} />
